@@ -1,14 +1,14 @@
 import { db } from "@/db";
 
 export default async function Home() {
-  const items = await db.query.testing.findMany();
+  const rooms = await db.query.room.findMany();
 
   return (
     <main>
-      {items.map((item) => {
+      {rooms.map((room) => {
         return (
-          <div key={item.id} className="font-bold text-red-800">
-            {item.name}
+          <div key={room.id} className="font-bold text-red-800">
+            {room.name}
           </div>
         );
       })}
